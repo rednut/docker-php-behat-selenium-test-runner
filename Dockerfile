@@ -1,5 +1,5 @@
 FROM million12/nginx-php:latest
-MAINTAINER Marcin Ryzycki marcin@m12.io
+MAINTAINER Stuart Nixon <stuart@rednut.net>
 
 # Install java, Xvfb, x11vnc server and firefox
 # Download Selenium Standalone Server
