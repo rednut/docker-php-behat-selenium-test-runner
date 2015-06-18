@@ -15,22 +15,22 @@ It contains all required componants:
 
 A makefile should assist you once you have the repo checked out:
 
-'''
+```bash
 git clone https://github.com/rednut/docker-php-behat-selenium-test-runner.git \
   && cd docker-php-behat-selenium-test-runner \
   && make
-'''
+```
 
 or from the docker hub:
 
-'''
+```docker
 docker pull rednut/docker-php-behat-selenium-test-runner:latest
-'''
+```
 
 you will then have an image called *docker-php-behat-selenium-test-runner* to use / play with / extend
 
 # TODO
-
+ 
 - create clean base image without all the cruft
 - seperate out selenium via linked containers
 - add safari and internet explorer
@@ -38,11 +38,13 @@ you will then have an image called *docker-php-behat-selenium-test-runner* to us
 
 
 # How to run the container
-
+ 
 chnage into your behat tests directory then launch a conatiner based on this image as follows:
 
 
-'''docker run -i -v $PWD:/behat rednut/docker-php-behat-selenium-test-runner "cd /behat && ./run-tests.sh"'''
+```bash
+docker run -i -v $PWD:/behat rednut/docker-php-behat-selenium-test-runner "cd /behat && ./run-tests.sh"
+```
 
 where run-tests.sh is your script to launch your tests using something like behat etc
 
@@ -50,7 +52,7 @@ where run-tests.sh is your script to launch your tests using something like beha
 pass through environment variables via the docker run '-e VAR=value' arguments, eg:
 
 
-'''
+```
 docker run -i \
   -v $PWD:/behat \
   -e TAG=smoke0 \
@@ -58,14 +60,14 @@ docker run -i \
   -e BROWSER=chrome \
       rednut/docker-php-behat-selenium-test-runner \
       "cd /behat && ./run-tests.sh"
-'''
+```
 
 # Based upon / forked from
 
 This dokcker image is based upon the million2/docke-php-testing repo
 
 
-
+ 
 # Docker with Selenium for Behat testing
 [![Circle CI](https://circleci.com/gh/million12/docker-php-testing.png?style=badge)](https://circleci.com/gh/million12/docker-php-testing)
 
