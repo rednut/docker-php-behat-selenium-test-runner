@@ -15,14 +15,25 @@ It contains all required componants:
 
 A makefile should assist you once you have the repo checked out:
 
-'''git clone $git_repo && cd $repo_path && make'''
+'''
+git clone https://github.com/rednut/docker-php-behat-selenium-test-runner.git \
+  && cd docker-php-behat-selenium-test-runner \
+  && make
+'''
 
 or from the docker hub:
 
-'''docker pull rednut/docker-php-behat-selenium-test-runner:latest'''
+'''
+docker pull rednut/docker-php-behat-selenium-test-runner:latest
+'''
 
-you will then have an image called *docker-php-behat-selenium-test-runner*
+you will then have an image called *docker-php-behat-selenium-test-runner* to use / play with / extend
 
+# TODO
+
+- create clean base image without all the cruft
+- seperate out selenium via linked containers
+- add safari and internet explorer
 
 
 
