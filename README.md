@@ -1,3 +1,60 @@
+# Docker Container for running behat browser tests via selenium in an isolated environment
+
+This image is build to run chrome + firefox + phantomjs browser tests via behat using selenium.
+
+It contains all required componants:
+
+- selenium standalone server:
+  - chrome + firefox + phantomjs
+  - TODO: safari
+  - TODO: ie on windows?
+- php
+
+
+# Howto build or fetch the docker image
+
+A makefile should assist you once you have the repo checked out:
+
+'''git clone $git_repo && cd $repo_path && make'''
+
+or from the docker hub:
+
+'''docker pull rednut/docker-php-behat-selenium-test-runner:latest'''
+
+you will then have an image called *docker-php-behat-selenium-test-runner*
+
+
+
+
+# How to run the container
+
+chnage into your behat tests directory then launch a conatiner based on this image as follows:
+
+
+'''docker run -i -v $PWD:/behat rednut/docker-php-behat-selenium-test-runner "cd /behat && ./run-tests.sh"'''
+
+where run-tests.sh is your script to launch your tests using something like behat etc
+
+
+pass through environment variables via the docker run '-e VAR=value' arguments, eg:
+
+
+'''
+docker run -i \
+  -v $PWD:/behat \
+  -e TAG=smoke0 \
+  -e CONFIG_FILE=my_config_file.yml \
+  -e BROWSER=chrome \
+      rednut/docker-php-behat-selenium-test-runner \
+      "cd /behat && ./run-tests.sh"
+'''
+
+# Based upon / forked from
+
+This dokcker image is based upon the million2/docke-php-testing repo
+
+
+
 # Docker with Selenium for Behat testing
 [![Circle CI](https://circleci.com/gh/million12/docker-php-testing.png?style=badge)](https://circleci.com/gh/million12/docker-php-testing)
 
