@@ -2,7 +2,7 @@
 
 
 build:
-	@docker build  -t rednut/docker-php-behat-selenium-test-runner .
+	@docker build  -t rednut/php-behat-selenium-test-runner .
 
 
 
