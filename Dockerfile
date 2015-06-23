@@ -64,6 +64,10 @@ RUN wget https://googledrive.com/host/0B5VlNZ_Rvdw6NTJoZDBSVy1ZdkE -O /opt/googl
 RUN chown root:root /opt/google/chrome/chrome-sandbox && chmod 4755 /opt/google/chrome/chrome-sandbox && md5sum /opt/google/chrome/chrome-sandbox
 #
 
+# install php composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+
+
 #RUN useradd jenkins -m -s /bin/bash
 #RUN mv /selenium-server-standalone-2.44.0.jar /home/jenkins
 #RUN chown jenkins:jenkins /home/jenkins/selenium-server-standalone-2.44.0.jar
