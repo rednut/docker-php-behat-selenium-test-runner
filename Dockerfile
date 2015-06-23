@@ -27,7 +27,7 @@ MAINTAINER Stuart Nixon <stuart@rednut.net>
 # Remove supervisord configs for nginx and php - we don't need to run them in this container
 # (but we need PHP configuration to run Behat tests)
 RUN \
-  apt-get install -y openjdk-7-jre-headless xvfb x11vnc firefox curl wget supervisor php5-dev php-pear php5-cli
+  apt-get install -y openjdk-7-jre-headless xvfb x11vnc firefox curl wget supervisor php5-dev php-pear php5-cli git subversion 
 #  apt-get install -y java-1.7.0-openjdk-headless xorg-x11-server-Xvfb x11vnc firefox curl wget supervisord php php-pear php5-cli && \
 
 
